@@ -1,0 +1,61 @@
+<idea-plugin version="2">
+  <id>com.steve.plugins.autoscroll</id>
+  <name>Autoscroll Save</name>
+  <version>1.1</version>
+  <vendor url="http://plugins.jetbrains.com/space/index?lg=vikingsteve">Steve Murphy</vendor>
+
+
+  <description><![CDATA[
+      At last, a handy way to save your Autoscroll to/from Source settings :)<br>
+      <br>
+      Toggle "Autoscroll to Source": Crtl-Alt-Shift PAGE UP<br>
+      Toggle "Autoscroll from Source": Crtl-Alt-Shift PAGE DOWN<br>
+      Save "Autoscroll to/from Source" settings: Crtl-Alt-Shift END<br>
+      <br>
+      Use the toggle actions to quickly enable / disable autoscroll settings in the active project.<br>
+      <br>
+      Save the autoscroll settings to apply them to currently open projects and all projects opened or created in future.<br>
+      <br>
+      The key bindings can be re-assigned via Settings -> Keymap -> search for "autoscroll".<br>
+      <br>
+      Saved settings can be disabled in the "autoscroll.xml" file located in config/options, if needed.<br>
+      <br>
+      ]]></description>
+
+	<change-notes><![CDATA[
+      1.0 - Initial version.<br>
+      1.1 - Enabled for all products.<br>
+      ]]>
+	</change-notes>
+
+  <!-- IntelliJ 13 or newer -->
+  <idea-version since-build="133.0"/>
+
+  <!-- enabled for all products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <application-components>
+	  <component>
+		  <implementation-class>com.steve.plugins.autoscroll.AutoScrollComponent</implementation-class>
+	  </component>
+  </application-components>
+
+  <project-components>
+  </project-components>
+
+  <actions>
+	  <action id="autoscroll-plugin.savesettings" class="com.steve.plugins.autoscroll.SaveAutoScrollSettings" text="Autoscroll Save" description="Save Autoscroll to/from Source settings" >
+		  <add-to-group group-id="FileMainSettingsGroup" anchor="after" relative-to-action="ExportImportGroup"/>
+		  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift END"/>
+	  </action>
+	  <action id="autoscroll-plugin.autoscrollfromsource" class="com.steve.plugins.autoscroll.ToggleAutoScrollFromSource" text="Toggle Autoscroll from Source" description="Toggle Autoscroll from Source">
+		  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift PAGE_DOWN"/>
+	  </action>
+	  <action id="autoscroll-plugin.autoscrolltosource" class="com.steve.plugins.autoscroll.ToggleAutoScrollToSource" text="Toggle Autoscroll to Source" description="Toggle Autoscroll to Source">
+		  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift PAGE_UP"/>
+	  </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+  </extensions>
+</idea-plugin>
