@@ -8,9 +8,9 @@
   <description><![CDATA[
       At last, a handy way to save your Autoscroll to/from Source settings :)<br>
       <br>
-      Toggle "Autoscroll to Source": Crtl-Alt-Shift PAGE UP<br>
-      Toggle "Autoscroll from Source": Crtl-Alt-Shift PAGE DOWN<br>
-      Save "Autoscroll to/from Source" settings: Crtl-Alt-Shift END<br>
+      Toggle "Autoscroll to Source": Ctrl-Alt-Shift PAGE UP<br>
+      Toggle "Autoscroll from Source": Ctrl-Alt-Shift PAGE DOWN<br>
+      Save "Autoscroll to/from Source" settings: Ctrl-Alt-Shift END<br>
       <br>
       Use the toggle actions to quickly enable / disable autoscroll settings in the active project.<br>
       <br>
@@ -19,6 +19,8 @@
       The key bindings can be re-assigned via Settings -> Keymap -> search for "autoscroll".<br>
       <br>
       Saved settings can be disabled in the "autoscroll.xml" file located in config/options, if needed.<br>
+      <br>
+      <i>If you find this plugin useful, please leave a Star-rating and comment :)</i><br>
       <br>
       ]]></description>
 
